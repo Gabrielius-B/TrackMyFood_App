@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/landingFragment">
+
+    <fragment
+        android:id="@+id/queryResults"
+        android:name="com.example.trackmyfoodapp.QueryResults"
+        android:label="fragment_query_results"
+        tools:layout="@layout/fragment_query_results" >
+        <action
+            android:id="@+id/action_queryResults_to_selectedQuery"
+            app:destination="@id/selectedQuery" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedQuery"
+        android:name="com.example.trackmyfoodapp.SelectedQuery"
+        android:label="fragment_selected_query"
+        tools:layout="@layout/fragment_selected_query" />
+    <fragment
+        android:id="@+id/selectDayDiary"
+        android:name="com.example.trackmyfoodapp.SelectDayDiary"
+        android:label="fragment_select_day_diary"
+        tools:layout="@layout/fragment_select_day_diary" />
+    <fragment
+        android:id="@+id/viewMealsDiary"
+        android:name="com.example.trackmyfoodapp.ViewMealsDiary"
+        android:label="fragment_view_meals_diary"
+        tools:layout="@layout/fragment_view_meals_diary" />
+    <fragment
+        android:id="@+id/addMealDiary"
+        android:name="com.example.trackmyfoodapp.AddMealDiary"
+        android:label="fragment_add_meal_diary"
+        tools:layout="@layout/fragment_add_meal_diary" >
+        <action
+            android:id="@+id/action_addMealDiary_to_selectMealDiary"
+            app:destination="@id/selectMealDiary" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectMealDiary"
+        android:name="com.example.trackmyfoodapp.SelectMealDiary"
+        android:label="fragment_select_meal_diary"
+        tools:layout="@layout/fragment_select_meal_diary" />
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.example.trackmyfoodapp.LandingFragment"
+        android:label="fragment_landing"
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_landingFragment_to_queryResults"
+            app:destination="@id/queryResults" />
+        <action
+            android:id="@+id/action_landingFragment_to_selectDayDiary"
+            app:destination="@id/selectDayDiary" />
+        <action
+            android:id="@+id/action_landingFragment_to_viewMealsDiary"
+            app:destination="@id/viewMealsDiary" />
+        <action
+            android:id="@+id/action_landingFragment_to_addMealDiary"
+            app:destination="@id/addMealDiary" />
+    </fragment>
+</navigation>

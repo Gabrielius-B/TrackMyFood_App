@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMealDiary" >
+
+    <TextView
+        android:id="@+id/textViewAddMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Add a Meal to your Diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSearch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Search:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddMeal" />
+
+    <EditText
+        android:id="@+id/editTextMeal"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Add Meal"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSearch1"
+        app:layout_constraintStart_toEndOf="@+id/textViewSearch1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddMeal" />
+
+    <Button
+        android:id="@+id/buttonSearch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="Search"
+        app:layout_constraintStart_toEndOf="@+id/editTextMeal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddMeal" />
+
+    <TextView
+        android:id="@+id/textViewMealType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:text="Meal Type:"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonBreakfast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMeal" />
+
+    <RadioButton
+        android:id="@+id/radioButtonBreakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:text="Breakfast"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonLunch"
+        app:layout_constraintStart_toEndOf="@+id/textViewMealType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMeal" />
+
+    <RadioButton
+        android:id="@+id/radioButtonLunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text="Lunch"
+        app:layout_constraintStart_toEndOf="@+id/radioButtonBreakfast"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMeal" />
+
+    <RadioButton
+        android:id="@+id/radioButtonDinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="10dp"
+        android:text="Dinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonBreakfast" />
+
+    <RadioButton
+        android:id="@+id/radioButtonSnack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Snack"
+        app:layout_constraintStart_toEndOf="@+id/radioButtonDinner"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonLunch" />
+
+    <TextView
+        android:id="@+id/textViewEnjoy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:text="Did you enjoy this meal?"
+        app:layout_constraintEnd_toStartOf="@+id/switchNoYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonDinner" />
+
+    <Switch
+        android:id="@+id/switchNoYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:text='Toggle for "Yes"'
+        app:layout_constraintStart_toEndOf="@+id/textViewEnjoy"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonSnack" />
+
+    <Button
+        android:id="@+id/buttonSave1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Save"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEnjoy" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toEndOf="@+id/buttonSave1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEnjoy" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
