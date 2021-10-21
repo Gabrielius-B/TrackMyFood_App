@@ -62,9 +62,16 @@ public class LandingFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_landing, container, false);
-        // Add action listener for the search button
+        // Add action listener for the each button
         Button buttonSearch = v.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(this);
+        Button buttonSelectDay = v.findViewById(R.id.buttonSelectDay);
+        buttonSelectDay.setOnClickListener(this);
+        Button buttonViewMeals = v.findViewById(R.id.buttonViewMeals);
+        buttonViewMeals.setOnClickListener(this);
+        Button buttonAddMeal = v.findViewById(R.id.buttonAddMeal);
+        buttonAddMeal.setOnClickListener(this);
+
         return v;
     }
 
@@ -72,6 +79,15 @@ public class LandingFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.buttonSearch){
             Navigation.findNavController(v).navigate(R.id.action_landingFragment_to_queryResults);
+        }
+        else if (v.getId() == R.id.buttonSelectDay){
+            Navigation.findNavController(v).navigate(R.id.action_landingFragment_to_selectDayDiary);
+        }
+        else if (v.getId() == R.id.buttonViewMeals){
+            Navigation.findNavController(v).navigate(R.id.action_landingFragment_to_viewMealsDiary);
+        }
+        else if (v.getId() == R.id.buttonAddMeal){
+            Navigation.findNavController(v).navigate(R.id.action_landingFragment_to_addMealDiary);
         }
     }
 }

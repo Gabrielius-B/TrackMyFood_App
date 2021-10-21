@@ -3,17 +3,19 @@ package com.example.trackmyfoodapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AddMealDiary#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddMealDiary extends Fragment {
+public class AddMealDiary extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +61,18 @@ public class AddMealDiary extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_meal_diary, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_meal_diary, container, false);
+        // Add action listener for the each button
+        Button buttonSearch1 = v.findViewById(R.id.buttonSearch1);
+        buttonSearch1.setOnClickListener(this);
+
+        return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.buttonSearch1) {
+            Navigation.findNavController(v).navigate(R.id.action_addMealDiary_to_selectMealDiary);
+        }
     }
 }
