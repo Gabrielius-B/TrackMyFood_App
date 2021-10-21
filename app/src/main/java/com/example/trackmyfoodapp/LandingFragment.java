@@ -3,17 +3,19 @@ package com.example.trackmyfoodapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link LandingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LandingFragment extends Fragment implements View.onClickListener {
+public class LandingFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,8 +63,8 @@ public class LandingFragment extends Fragment implements View.onClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_landing, container, false);
         // Add action listener for the search button
-        Button searchButton = v.findViewById(R.id.buttonSearch);
-        searchButton.setOnClickListener(this);
+        Button buttonSearch = v.findViewById(R.id.buttonSearch);
+        buttonSearch.setOnClickListener(this);
         return v;
     }
 
